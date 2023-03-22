@@ -13,7 +13,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
   } else {
     // 認証が失敗した場合、エラーメッセージを表示する
-    $error_message = 'ユーザー名またはパスワードが間違っています';
+    header('Location: ./error/error.html');
+    exit();
   }
 }
 ?>
