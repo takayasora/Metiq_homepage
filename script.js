@@ -8,16 +8,13 @@ window.onload = () => {
   let form = document.getElementById("formw")
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (uname === "20ec070" && pass === "nameko1222") {
+    if (ubox.value === "20ec070" && pbox.value === "nameko1222") {
       alert("validated")
-      location.assign("./loggedin/index.html")
-
+      location.assign("../loggedin/index.html")
     }
     else {
       alert("wrong password")
-      location.assign("./error/index.html")
-
+      location.assign("../error/index.html")
     }
-
   })
 };
