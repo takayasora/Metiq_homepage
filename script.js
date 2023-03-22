@@ -10,9 +10,7 @@ window.onload = ()=>  {
         e.preventDefault();
         if(uname === ubox.value && pass=== pbox.value) {
             alert("validated")
-          //if you want to display a htnl page as             result for logged in  uncomment below             code and add your html file in the                  argument
-          // location.assign("loggedin.html")
-          
+          location.assign("./loggedin/index.html")
         }
         else {
             alert("wrong password")

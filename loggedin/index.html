@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Three.js Wave Particles</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:600,400,300,100,300italic,400italic,600,600italic'>
+<link rel='stylesheet' href='https://codepen.io/simpson77/pen/bROBYz/5130ec77521fe795fa5f7d49b55cca4b.css'>
+<link rel='stylesheet' href='https://codepen.io/simpson77/pen/OwRRXE/5882ea966dec32bdfb089dca1d75c7f3.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="nav-cont fixed-top" >
+  <div class="sup-nav d-sm-block">
+  <ul class="d-flex list-inline justify-content-end">
+   <!--<li class="list-inline-item"><a href="#">United States</a></li>-->
+    <li class="list-inline-item"><a href="#">Log in</a></li>
+      <li class="list-inline-item"><a href="#">Contact Us</a></li>
+    <li class="list-inline-item"><a href="#">Countries</a></li>
+  
+    
+
+  </ul>
+</div>
+<nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="#">
+ <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 544 156.7" style="width:60%; padding: 5px 0 5px 15px;" xml:space="preserve">
+<path d="M232.5,63.6h-0.1c-3.6-7.1-9.7-10.8-17.7-10.8c-18.2,0-30.6,15.7-30.6,33.7c0,13.4,7.6,22.8,22,22.8
+	c8.4,0,15.7-4.2,20.8-10.9h0.1l-0.2,1.3c-0.1,0.8-0.4,3.2-0.4,4.6c0,2.4,0.4,3.7,0.4,3.7h6.2c0,0-0.4-1.4-0.4-3.9c0-1.3,0-2.9,0.4-5
+	l7.3-45.4h-6.2L232.5,63.6z M206.9,103.5c-10.6,0-16.3-7.5-16.3-17.7c0-13.6,8.8-27.5,23.5-27.5c10.6,0,16.3,7.5,16.3,17.7
+	C230.4,89.6,221.7,103.5,206.9,103.5z M309.8,53.6c0,0,0.4,1.4,0.4,3.9c0,1.3-0.1,2.7-0.4,4.4L304,99c-0.4,2-0.5,3.9-0.5,5.3
+	c0,2.4,0.4,3.7,0.4,3.7h6.2c0,0-0.4-1.4-0.4-3.9c0-1.3,0-2.8,0.2-4.3l5.8-37.1c0.4-2.1,0.5-4,0.5-5.4c0-2.5-0.3-3.7-0.3-3.7H309.8z
+	 M318,29.3c-3,0-5.8,2.9-5.8,6.1c0,2.3,1.7,4.2,4.2,4.2c3.2,0,5.8-2.8,5.8-6C322.2,31.3,320.5,29.3,318,29.3z M291.1,53.9
+	c1.3-8,1.4-22.2,12.6-22.2c1.9,0,3.9,0.5,5.6,1.2l1.4-5.5c-1.4-1.1-5.6-1.2-7.3-1.2c-15.1,0-16.8,17-18.5,27.7h-21.2
+	c1.3-8,1.4-22.2,12.6-22.2c1.9,0,3.9,0.5,5.6,1.2l1.4-5.5c-1.4-1.1-5.6-1.2-7.3-1.2c-15.1,0-16.8,17-18.5,27.7H250l-0.9,5.7h7.8
+	l-9.9,62.2c-0.8,4.9-2.7,8.4-2.7,8.4h6.1c0,0,2-3.3,2.9-9.1l9.7-61.5h21.2l-9.9,62.2c-0.8,4.9-2.7,8.4-2.7,8.4h6.1
+	c0,0,2-3.3,2.9-9.1l9.7-61.5h13.2l0.9-5.7H291.1z M338.8,27.3c0,0,0.4,1.4,0.4,3.9c0,1.3-0.1,2.7-0.4,4.4l-10,63.4
+	c-0.4,2-0.5,3.9-0.5,5.3c0,2.4,0.3,3.7,0.3,3.7h6.2c0,0-0.4-1.4-0.4-3.9c0-1.3,0-2.8,0.2-4.3l10.1-63.4c0.3-2.1,0.5-4,0.5-5.4
+	c0-2.5-0.4-3.7-0.4-3.7H338.8z M367.2,29.3c-3,0-5.8,2.9-5.8,6.1c0,2.3,1.7,4.2,4.2,4.2c3.2,0,5.9-2.8,5.9-6
+	C371.4,31.3,369.6,29.3,367.2,29.3z M359,53.6c0,0,0.3,1.4,0.3,3.9c0,1.3-0.1,2.7-0.3,4.4L353.1,99c-0.4,2-0.5,3.9-0.5,5.3
+	c0,2.4,0.4,3.7,0.4,3.7h6.2c0,0-0.4-1.4-0.4-3.9c0-1.3,0-2.8,0.2-4.3l5.8-37.1c0.3-2.1,0.5-4,0.5-5.4c0-2.5-0.3-3.7-0.3-3.7H359z
+	 M424.4,63.6h-0.1c-3.6-7.1-9.7-10.8-17.7-10.8c-18.2,0-30.6,15.7-30.6,33.7c0,13.4,7.6,22.8,22,22.8c8.4,0,15.7-4.2,20.8-10.9h0.1
+	l-0.2,1.3c-0.1,0.8-0.4,3.2-0.4,4.6c0,2.4,0.4,3.7,0.4,3.7h6.2c0,0-0.4-1.4-0.4-3.9c0-1.3,0-2.9,0.4-5l7.3-45.4h-6.2L424.4,63.6z
+	 M398.8,103.5c-10.6,0-16.3-7.5-16.3-17.7c0-13.6,8.8-27.5,23.5-27.5c10.6,0,16.3,7.5,16.3,17.7C422.3,89.6,413.6,103.5,398.8,103.5
+	z M459,45.8c0.3-2.1,0.5-4,0.5-5.4c0-2.4-0.4-3.7-0.4-3.7H453c0,0,0.4,1.4,0.4,3.9c0,1.3-0.1,2.7-0.4,4.4l-1.4,8.9h-8l-0.8,5.7h7.8
+	c-1.4,9.1-5.7,28.2-5.7,38.9c0,6.3,3,10.6,9.8,10.6c2.5,0,6-0.5,8.2-1.8l0.4-5.5c-1.8,0.9-4,1.5-6,1.5c-4.7,0-6-3.3-6-7.4
+	c0-2.9,0.6-5.7,1-8.5l4.3-27.9H470l0.9-5.7h-13.2L459,45.8z M502.6,52.8c-15.6,0-30.4,13.7-30.4,33.3c0,13.6,7.6,23,20.6,23
+	c15.1,0,22.9-8.2,22.9-8.2l-2.1-4.3c-0.1,0-7.7,7-19.3,7c-10.2,0-15.7-6.6-15.7-17c0-1.4,0.1-2.9,0.4-4.4c4.1,0.5,7.7,0.7,11.1,0.7
+	c20.9,0,29.5-8.5,29.5-16.7C519.6,59.5,513.8,52.8,502.6,52.8z M490.5,77.6c-3,0-6.6-0.1-10.4-0.6c1.5-7.6,8.7-19,21.3-19
+	c7.3,0,12,3.7,12,8C513.4,74.1,502.4,77.6,490.5,77.6z M79,0C35.4,0,0,35.1,0,78.4c0,43.2,35.4,78.4,79,78.4c43.5,0,79-35.2,79-78.4
+	C157.9,35.1,122.5,0,79,0z M79,147.6c-38.5,0-69.9-31.1-69.9-69.3C9.1,40.1,40.4,9.1,79,9.1c38.5,0,69.9,31.1,69.9,69.3
+	C148.9,116.6,117.5,147.6,79,147.6z M68.3,73.7c5.6,0,27.9,0,27.9,0s-5.8,29-5.8,29.1c-0.3,1.4-1.4,3.6-3.4,5.2l-0.2,0.2
+	c-1.6,1.2-3.7,2.2-6.6,2.2c0,0-15.8,0-19.7,0c-0.6,2.9-2.1,9.9-2.9,14c5.1,0,18.4,0,18.4,0c25.9,0,31-22.1,31.2-23
+	c0,0,7.4-35.7,8.7-41.9c-6.1,0-40.6,0.1-44.8,0.1C70.6,62.5,69.2,69.5,68.3,73.7z M79.5,98.9c0.6-2.9,2-9.9,2.9-14.1
+	c-5.2,0-18.6,0-18.6,0c-0.4,0-3.3-0.2-5.5-2c-0.3-0.3-0.7-0.6-1-1c0,0-0.1,0-0.1-0.1c-1.8-2.2-1.3-5.1-1.2-5.8
+	c0,0,4.2-20.1,4.2-20.2c0.3-1.4,1.4-3.5,3.4-5.1l0.3-0.3c1.6-1.2,3.7-2.1,6.5-2.1c0,0,15.8,0,19.7,0c0.6-3,2-9.9,2.9-14
+	c-5.1,0-18.4,0-18.4,0c-25.9,0-31,22-31.3,22.9l-4.1,20c0,0.1-1.7,9.3,3.5,15.6c3.4,4.1,9.1,6.2,17.1,6.2
+	C59.8,98.9,75.6,98.9,79.5,98.9z M525.2,46.2h3v8.3h2v-8.3h3v-1.7h-7.9V46.2z M541,44.5l-1.8,6.8l-1.8-6.8h-3v10h1.9v-7.9l2,7.9h1.9
+	l2-7.9v7.9h1.9v-10H541z"/>
+</svg>
+
+
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav ml-auto ">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Advertiser</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Publisher</a>
+      </li>
+     
+<li class="nav-item dropdown"> <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="/about-us" role="button" aria-haspopup="true" aria-expanded="false">About Us</a> 
+            	<div class="dropdown-menu">
+                <a class=" dropdown-item" href="/about-us">Our Leaders</a>
+                <a class=" dropdown-item" href="/events">Events</a>
+                <a class=" dropdown-item" href="/careers">Careers</a>
+              </div>
+            </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Power of Affiliate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Content Hub</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav></div>
+<section id="homepage-hero" class="d-flex justify-content-end flex-column">
+  
+  <h1>Dare to think big<span>.</span></h1>
+  <p>Thrive in an established ecosystem designed to help you achieve intelligent, scalable, and sustainable growth.</p>
+</section>
+
+<div class="container">
+  <h1>HTML Ipsum Presents</h1>
+
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<h2>Header Level 2</h2>
+
+<ol>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+<h3>Header Level 3</h3>
+
+<ul>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+
+<pre><code>
+#header h1 a {
+  display: block;
+  width: 300px;
+  height: 80px;
+}
+</code></pre>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/Projector.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/CanvasRenderer.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/143797/stats.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
