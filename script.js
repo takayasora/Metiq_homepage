@@ -8,7 +8,7 @@ window.onload = () => {
   let form = document.getElementById("formw")
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if ("20ec070" === ubox.value && "password" === pbox.value) {
+    if (uname === ubox.value && pass === pbox.value) {
       alert("validated")
       location.assign("./loggedin/index.html")
 
