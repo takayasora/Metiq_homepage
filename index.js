@@ -1,11 +1,14 @@
 window.onload = () => {
+  alert("Enter Username and Password for Registration.");
+  let uname = "20ec070"
+  let pass = "OK"
   let ubox = document.getElementById("usern")
   let pbox = document.getElementById("pass")
 
   let form = document.getElementById("formw")
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (uname === "20ec070@ms.dendai.ac.jp" && pass === "nameko1222") {
+    if (uname === ubox.value && pass === pbox.value) {
       alert("validated")
       location.assign("./loggedin/index.html")
     }
