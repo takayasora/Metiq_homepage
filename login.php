@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   if($username === 'metiq' && $password === 'password') {
     // 認証が成功した場合、セッションにログイン状態を保存する
     $_SESSION['logged_in'] = true;
-    header('Location: dashboard.php');
+    header('Location: next.html');
     exit();
   } else {
     // 認証が失敗した場合、エラーメッセージを表示する
