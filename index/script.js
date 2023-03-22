@@ -10,11 +10,11 @@ window.onload = () => {
     e.preventDefault();
     if (uname === 'metiq' && pass === 'password') {
       alert("validated")
-      location.assign("./loggedin/index.html")
+      location.assign("../loggedin/index.html")
     }
     else {
       alert("wrong password")
-      location.assign("./error/index.html")
+      location.assign("../error/index.html")
     }
 
   })
